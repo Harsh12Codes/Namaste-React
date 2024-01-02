@@ -1,4 +1,7 @@
-const heading = React.createElement("h1", { id: "heading" }, "Hello world from React");
+import React from "react";
+import ReactDOM from "react-dom";
+
+const heading = React.createElement("h1", { id: "heading" }, "Hello world from React🚀");
 const description = React.createElement(
     "p",
     { id: "description" },
