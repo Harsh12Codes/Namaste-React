@@ -4,12 +4,17 @@
     padding: 0%;
 }
 
-#root {
+#child {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #heading {
     color: red;
+}
+
+#description {
+    color: black;
 }
