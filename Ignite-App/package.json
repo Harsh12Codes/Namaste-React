@@ -1,0 +1,15 @@
+{
+  "name": "ignite-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Harsh Yadav",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
