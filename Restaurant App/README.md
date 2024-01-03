@@ -1,4 +1,4 @@
-#Restaurant App
+# Restaurant App
 
 this is the app that use hardcoded data taken from swiggy website and demonstrate how we can make a dynamic webpage.
 
