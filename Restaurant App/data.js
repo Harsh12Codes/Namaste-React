@@ -1,5 +1,11 @@
-//This data contain swiggy cards api data just can't update the images as image links are not used , no access to swiggy database.
-
+/**
+ * This data contain swiggy cards api data just can't update the images as image links are not used,
+ * no access to swiggy database.
+ *
+ * but we can use by adding :
+ * https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ + cloudinaryImageId
+ *
+ */
 
 const data = {
     restaurants: [
@@ -1399,9 +1405,7 @@ const data = {
 // console.log(data.restaurants);
 
 export const filteredData = data.restaurants.map((shop) => {
-    const { name, cuisines, avgRatingString, sla } = shop.info;
+    const { id, name, cuisines, avgRatingString, sla, cloudinaryImageId } = shop.info;
     const { deliveryTime } = sla;
-    return { name, cuisines, avgRatingString, deliveryTime };
+    return { id, name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId };
 });
-
-console.log(filteredData);

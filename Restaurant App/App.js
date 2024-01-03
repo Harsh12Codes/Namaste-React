@@ -22,12 +22,14 @@ const Header = () => {
 };
 
 const RestaurantCard = (props) => {
-    const { name, cuisines, avgRatingString, deliveryTime } = props.resData;
-    console.log(deliveryTime);
+    const { name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId } = props.resData;
+    const imageLink =
+        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+        cloudinaryImageId;
     return (
         <div className="res-card">
             <div className="res-img">
-                <img src="https://static.toiimg.com/photo/51892394.cms" alt="restaurant-image" />
+                <img src={imageLink} alt="restaurant-image" />
             </div>
             <div className="res-details">
                 <span className="res-name">{name}</span>
@@ -49,10 +51,9 @@ const RestaurantCard = (props) => {
 const Body = () => {
     return (
         <div className="body-container">
-            <div className="search">Search</div>
             <div className="res-container">
                 {filteredData.map((restaurant) => {
-                    return <RestaurantCard resData={restaurant} />;
+                    return <RestaurantCard key={restaurant.id} resData={restaurant} />;
                 })}
             </div>
         </div>
