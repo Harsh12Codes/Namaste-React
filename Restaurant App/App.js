@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Star from "./assets/star.svg";
+import { filteredData } from "./data";
 
 const Header = () => {
     return (
@@ -20,23 +21,25 @@ const Header = () => {
     );
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+    const { name, cuisines, avgRatingString, deliveryTime } = props.resData;
+    console.log(deliveryTime);
     return (
         <div className="res-card">
             <div className="res-img">
                 <img src="https://static.toiimg.com/photo/51892394.cms" alt="restaurant-image" />
             </div>
             <div className="res-details">
-                <span className="res-name">50 Kalò</span>
-                <span className="res-cuisine">Italian, New-York, Sicillian</span>
+                <span className="res-name">{name}</span>
+                <span className="res-cuisine">{cuisines.join(", ")}</span>
             </div>
             <div className="res-features">
                 <div className="res-rating">
-                    <span>4.9</span>
+                    <span>{avgRatingString}</span>
                     <img src={Star} alt="" />
                 </div>
                 <div className="res-delivery-time">
-                    <span>30 min</span>
+                    <span>{deliveryTime} min</span>
                 </div>
             </div>
         </div>
@@ -48,14 +51,9 @@ const Body = () => {
         <div className="body-container">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
-                <RestaurantCard />
+                {filteredData.map((restaurant) => {
+                    return <RestaurantCard resData={restaurant} />;
+                })}
             </div>
         </div>
     );
