@@ -1,0 +1,10 @@
+.body-container {
+    height: 100%;
+    margin: 0rem 1rem;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

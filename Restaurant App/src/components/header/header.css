@@ -1,0 +1,29 @@
+.header {
+    height: 4rem;
+    width: 100%;
+    /* background-color: lightcoral; */
+    padding: 0rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px #18180b;
+}
+
+.logo {
+    color: #18180b;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: 2rem;
+}
+
+.logo > span {
+    font-family: "Bungee Shade", sans-serif;
+}
+
+.nav-items > ul {
+    /* nav-items */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}

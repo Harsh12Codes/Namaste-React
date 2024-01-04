@@ -1,0 +1,65 @@
+.res-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 18.75rem;
+    border: solid 1px grey;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.res-img {
+    width: 100%;
+    max-width: 18.75rem;
+    height: 11.25rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.res-img > img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.res-img:hover > img {
+    transform: scale(1.1);
+}
+
+.res-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.res-details > .res-cuisine {
+    font-size: small;
+    color: grey;
+}
+
+.res-features {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.res-rating {
+    background-color: lightgreen;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.res-rating > img {
+    margin-left: 0.2rem;
+    height: 0.75rem;
+    width: 0.75rem;
+}
