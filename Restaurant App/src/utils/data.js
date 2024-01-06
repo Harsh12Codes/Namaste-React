@@ -1402,8 +1402,6 @@ const data = {
     ],
 };
 
-// console.log(data.restaurants);
-
 export const filteredData = data.restaurants.map((shop) => {
     const { id, name, cuisines, avgRatingString, sla, cloudinaryImageId } = shop.info;
     const { deliveryTime } = sla;

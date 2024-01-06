@@ -1,10 +1,48 @@
 .body-container {
     height: 100%;
     margin: 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .res-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.top-btn {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0rem;
+}
+
+.search-container {
+    margin-right: 1rem;
+}
+
+.search-box {
+    outline: none;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 0.4rem 0.6rem;
+    margin-right: 0.5rem;
+    border-radius: 50px;
+}
+
+.search-container > button {
+    outline: none;
+    border: none;
+    background-color: cadetblue;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+}
+
+.top-btn > button {
+    padding: 0.4rem 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: lightsalmon;
 }
