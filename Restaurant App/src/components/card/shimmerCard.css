@@ -1,0 +1,77 @@
+.shim-card {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    width: 18.75rem;
+    height: 100%;
+    max-height: 20.5rem;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.shim-img {
+    background-color: #ddd;
+    width: 100%;
+    max-width: 18.75rem;
+    height: 11.25rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.shim-img > img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.shim-img:hover > img {
+    transform: scale(1.1);
+}
+
+.shim-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.shim-name {
+    background-color: #ddd;
+    height: 1.2rem;
+}
+
+.shim-details > .shim-cuisine {
+    background-color: #ddd;
+    height: 0.92rem;
+    font-size: small;
+}
+
+.shim-features {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.shim-rating {
+    width: 2.077rem;
+    height: 0.92rem;
+    background-color: #ddd;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.shim-delivery-time {
+    background-color: #ddd;
+    height: 0.92rem;
+    width: 2.077rem;
+    border-radius: 4px;
+}
