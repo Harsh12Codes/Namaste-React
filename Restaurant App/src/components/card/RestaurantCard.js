@@ -1,11 +1,10 @@
 import Star from "../../assets/star.svg";
+import { IMAGECDN_URL } from "../../utils/constant";
 import "./restaurantCard.css";
 
 export const RestaurantCard = (props) => {
     const { name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId } = props.resData;
-    const imageLink =
-        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-        cloudinaryImageId;
+    const imageLink = IMAGECDN_URL + cloudinaryImageId;
 
     return (
         <div className="res-card">
