@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
     const [logbtn, setLogbtn] = useState("Login");
@@ -19,9 +20,15 @@ export const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li className="list-item">Home</li>
-                    <li className="list-item">About</li>
-                    <li className="list-item">Contact</li>
+                    <li className="list-item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="list-item">
+                        <Link to="/about">About</Link>
+                    </li>
+                    <li className="list-item">
+                        <Link to="/contact">Contact</Link>
+                    </li>
                     <li className="list-item">Cart</li>
                     <button className="nav-btn" onClick={handleLogin}>
                         {logbtn}
