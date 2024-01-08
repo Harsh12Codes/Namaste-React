@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Body } from "./components/body/Body";
-import { Header } from "./components/header/Header";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Contact from "./pages/contact/Contact";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
 import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 
 const App = () => {
     return (
@@ -22,7 +22,7 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Body />,
+                element: <Home />,
             },
             {
                 path: "/about",

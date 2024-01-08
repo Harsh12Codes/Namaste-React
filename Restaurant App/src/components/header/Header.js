@@ -1,22 +1,22 @@
-import { useState } from "react";
 import "./header.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
-    const [logbtn, setLogbtn] = useState("Login");
+export default function Header() {
+    const [loginBtn, setLoginBtn] = useState("Login");
 
     const handleLogin = () => {
-        if (logbtn === "Login") {
-            setLogbtn("Logout");
+        if (loginBtn === "Login") {
+            setLoginBtn("Logout");
         } else {
-            setLogbtn("Login");
+            setLoginBtn("Login");
         }
     };
 
     return (
         <div className="header">
             <div className="logo">
-                <span>Restaur</span>
+                <span>Restro</span>
             </div>
             <div className="nav-items">
                 <ul>
@@ -31,10 +31,10 @@ export const Header = () => {
                     </li>
                     <li className="list-item">Cart</li>
                     <button className="nav-btn" onClick={handleLogin}>
-                        {logbtn}
+                        {loginBtn}
                     </button>
                 </ul>
             </div>
         </div>
     );
-};
+}

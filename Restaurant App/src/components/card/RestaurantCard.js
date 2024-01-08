@@ -2,7 +2,7 @@ import Star from "../../assets/star.svg";
 import { IMAGECDN_URL } from "../../utils/constant";
 import "./restaurantCard.css";
 
-export const RestaurantCard = (props) => {
+export default function RestaurantCard(props) {
     const { name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId } = props.resData;
     const imageLink = IMAGECDN_URL + cloudinaryImageId;
 
@@ -26,4 +26,4 @@ export const RestaurantCard = (props) => {
             </div>
         </div>
     );
-};
+}

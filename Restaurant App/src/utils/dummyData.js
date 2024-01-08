@@ -1401,9 +1401,3 @@ const data = {
         },
     ],
 };
-
-export const filteredData = data.restaurants.map((shop) => {
-    const { id, name, cuisines, avgRatingString, sla, cloudinaryImageId } = shop.info;
-    const { deliveryTime } = sla;
-    return { id, name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId };
-});

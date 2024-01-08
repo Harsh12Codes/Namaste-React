@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import "./body.css";
-import { RestaurantCard } from "../card/RestaurantCard";
-import Shimmer from "../shimmer/Shimmer";
+import "./home.css";
+import RestaurantCard from "../../components/card/RestaurantCard";
+import Shimmer from "../../components/shimmer/Shimmer";
 
-export const Body = () => {
+export default function Home() {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
-    const [restro, setRestro] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
@@ -13,23 +13,28 @@ export const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(
-            "https://cors-anywhere.herokuapp.com/" +
-                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8947446&lng=75.8301169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+        // For production build
+        // const response = await fetch(
+        //     "https://cors-anywhere.herokuapp.com/" +
+        //         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8947446&lng=75.8301169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+        // );
+
+        const response = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.8947446&lng=75.8301169&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
         );
 
-        const json = await data.json();
+        const json = await response.json();
         const restaurants =
             json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-        const newData = restaurants.map((shop) => {
+        const extractedDetails = restaurants.map((shop) => {
             const { id, name, cuisines, avgRatingString, sla, cloudinaryImageId } = shop.info;
             const { deliveryTime } = sla;
             return { id, name, cuisines, avgRatingString, deliveryTime, cloudinaryImageId };
         });
 
-        setListOfRestaurant(newData);
-        setRestro(newData);
+        setListOfRestaurant(extractedDetails);
+        setFilteredData(extractedDetails);
     };
 
     return listOfRestaurant.length === 0 ? (
@@ -50,7 +55,7 @@ export const Body = () => {
                             const searchData = listOfRestaurant.filter((res) => {
                                 return res.name.toLowerCase().includes(searchText.toLowerCase());
                             });
-                            setRestro(searchData);
+                            setFilteredData(searchData);
                         }}
                     >
                         search
@@ -58,14 +63,14 @@ export const Body = () => {
                 </div>
                 <button
                     onClick={() => {
-                        if (restro !== listOfRestaurant) {
-                            setRestro(listOfRestaurant);
+                        if (filteredData !== listOfRestaurant) {
+                            setFilteredData(listOfRestaurant);
                         } else {
                             const topRated = listOfRestaurant.filter((restaurant) => {
                                 return restaurant.avgRatingString > 4.2;
                             });
 
-                            setRestro(topRated);
+                            setFilteredData(topRated);
                         }
                     }}
                 >
@@ -73,10 +78,10 @@ export const Body = () => {
                 </button>
             </div>
             <div className="res-container">
-                {restro.map((restaurant) => {
+                {filteredData.map((restaurant) => {
                     return <RestaurantCard key={restaurant.id} resData={restaurant} />;
                 })}
             </div>
         </div>
     );
-};
+}
