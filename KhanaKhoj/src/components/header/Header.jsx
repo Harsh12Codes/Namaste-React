@@ -5,18 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 export default function Header() {
     const [toggle, setToggle] = useState(false);
 
+    const handleToggle = () => setToggle(!toggle);
+
     return (
         <nav>
             <div className="header-logo">
-                <NavLink to="/home">KhanaKhoj</NavLink>
+                <NavLink to="/">KhanaKhoj</NavLink>
             </div>
-            <div
-                className="header-hamburger"
-                onClick={() => {
-                    setToggle(!toggle);
-                    console.log(toggle);
-                }}
-            >
+            <div className="header-hamburger" onClick={handleToggle}>
                 {toggle ? (
                     <ChevronUpSquare className="icon-size" />
                 ) : (
@@ -26,16 +22,24 @@ export default function Header() {
             <div className={`header-menu ${toggle ? "open" : ""}`}>
                 <ul>
                     <li>
-                        <NavLink to="/restaurant">Restaurants</NavLink>
+                        <NavLink to="/restaurant" onClick={handleToggle}>
+                            Restaurants
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact">Contact</NavLink>
+                        <NavLink to="/contact" onClick={handleToggle}>
+                            Contact
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about">About</NavLink>
+                        <NavLink to="/about" onClick={handleToggle}>
+                            About
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/cart">Cart</NavLink>
+                        <NavLink to="/cart" onClick={handleToggle}>
+                            Cart
+                        </NavLink>
                     </li>
                 </ul>
             </div>

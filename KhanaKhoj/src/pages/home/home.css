@@ -22,7 +22,7 @@
 .home-details {
     display: flex;
     flex-direction: column;
-    max-width: 30.35rem;
+    max-width: 32rem;
     gap: 2rem;
     align-items: center;
     margin: 2rem 3rem;
@@ -115,7 +115,7 @@
 }
 
 /* large devices ( 1030px and up) */
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: 1080px) {
     .search-size {
         font-size: large;
         padding: 0.8rem 1.2rem !important;

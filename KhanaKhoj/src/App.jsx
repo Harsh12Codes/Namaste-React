@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 /*
- * PAGES 
+ * PAGES
  */
 import Home from "./pages/home/Home.jsx";
 import Header from "./components/header/Header";
@@ -11,15 +11,17 @@ import Restaurants from "./pages/restaurants/Restaurants.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import About from "./pages/about/About.jsx";
 import Cart from "./pages/cart/Cart.jsx";
-
+import RestaurantMenu from "./pages/restaurantMenu/RestaurantMenu.jsx";
+import Accordion from "./components/accordion/Accordion.jsx";
 
 /*
-* APP COMPONENTS
-*/
+ * APP COMPONENTS
+ */
+
 const App = () => {
     return (
         <div className="app">
-            <Home />
+            <Accordion />
         </div>
     );
 };
@@ -35,7 +37,7 @@ const Other = () => {
 
 const appRouter = createBrowserRouter([
     {
-        path: "/home",
+        path: "/",
         element: <App />,
     },
     {
@@ -58,13 +60,16 @@ const appRouter = createBrowserRouter([
                 path: "/cart",
                 element: <Cart />,
             },
+            {
+                path: "/restaurant/:resId",
+                element: <RestaurantMenu />,
+            },
         ],
     },
 ]);
 
-
 /*
-*  RENDERING
-*/
+ *  RENDERING
+ */
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
